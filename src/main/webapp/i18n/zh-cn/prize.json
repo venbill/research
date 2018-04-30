@@ -1,0 +1,37 @@
+
+{
+    "researchApp": {
+        "prize" : {
+            "home": {
+                "title": "奖品",
+                "createLabel": "创建新 奖品",
+                "createOrEditLabel": "创建或编辑 奖品"
+            },
+            "created": "奖品 {{ param }} 创建成功",
+            "updated": "奖品 {{ param }} 更新成功",
+            "deleted": "奖品 {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 奖品 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "奖品"
+            },
+            "prizeId": "奖品 Id",
+            "prizeType": "奖品类型",
+            "name": "名称",
+            "description": "介绍",
+            "picture": "图片",
+            "minPrice": "最低价格",
+            "maxPrice": "最高价格",
+            "goodPrice": "商品价格",
+            "createTime": "创建时间",
+            "createUser": "创建人",
+            "updateTime": "修改时间",
+            "updateUser": "修改人",
+            "startTime": "开始时间",
+            "endTime": "截止时间",
+            "totalMoney": "总共额度",
+            "totalNo": "总共数量"
+        }
+    }
+}

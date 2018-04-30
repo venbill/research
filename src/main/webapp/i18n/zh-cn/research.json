@@ -1,0 +1,32 @@
+
+{
+    "researchApp": {
+        "research" : {
+            "home": {
+                "title": "调查",
+                "createLabel": "创建新 调查",
+                "createOrEditLabel": "创建或编辑 调查"
+            },
+            "created": "调查 {{ param }} 创建成功",
+            "updated": "调查 {{ param }} 更新成功",
+            "deleted": "调查 {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 调查 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "调查"
+            },
+            "researchId": "调查 Id",
+            "name": "名称",
+            "description": "介绍",
+            "picture": "图片",
+            "receive": "调查状态",
+            "publisher": "发布人",
+            "createTime": "创建时间",
+            "updateTime": "修改时间",
+            "startTime": "开始时间",
+            "endTime": "截止时间",
+            "prizeId": "奖品"
+        }
+    }
+}

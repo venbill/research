@@ -1,0 +1,90 @@
+<div>
+    <h2 data-translate="researchApp.prize.home.title">Prizes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="prize.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="researchApp.prize.home.createLabel">
+                        Create new Prize
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <!--<th jh-sort-by="prizeId"><span data-translate="researchApp.prize.prizeId">Prize Id</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="prizeType"><span data-translate="researchApp.prize.prizeType">Prize Type</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th jh-sort-by="name"><span data-translate="researchApp.prize.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span data-translate="researchApp.prize.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <!--<th jh-sort-by="picture"><span data-translate="researchApp.prize.picture">Picture</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="minPrice"><span data-translate="researchApp.prize.minPrice">Min Price</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="maxPrice"><span data-translate="researchApp.prize.maxPrice">Max Price</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th jh-sort-by="goodPrice"><span data-translate="researchApp.prize.goodPrice">Good Price</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="researchApp.prize.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <!--<th jh-sort-by="createUser"><span data-translate="researchApp.prize.createUser">Create User</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="updateTime"><span data-translate="researchApp.prize.updateTime">Update Time</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="updateUser"><span data-translate="researchApp.prize.updateUser">Update User</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th jh-sort-by="startTime"><span data-translate="researchApp.prize.startTime">Start Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="endTime"><span data-translate="researchApp.prize.endTime">End Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <!--<th jh-sort-by="totalMoney"><span data-translate="researchApp.prize.totalMoney">Total Money</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th jh-sort-by="totalNo"><span data-translate="researchApp.prize.totalNo">Total No</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="prize in vm.prizes track by prize.id">
+                    <td><a ui-sref="prize-detail({id:prize.id})">{{prize.id}}</a></td>
+                    <!--<td>{{prize.prizeId}}</td>-->
+                    <!--<td>{{prize.prizeType}}</td>-->
+                    <td>{{prize.name}}</td>
+                    <td>{{prize.description}}</td>
+                    <!--<td>{{prize.picture}}</td>-->
+                    <!--<td>{{prize.minPrice}}</td>-->
+                    <!--<td>{{prize.maxPrice}}</td>-->
+                    <td>{{prize.goodPrice}}</td>
+                    <td>{{prize.createTime | date:'medium'}}</td>
+                    <!--<td>{{prize.createUser}}</td>-->
+                    <!--<td>{{prize.updateTime | date:'medium'}}</td>-->
+                    <!--<td>{{prize.updateUser}}</td>-->
+                    <td>{{prize.startTime | date:'medium'}}</td>
+                    <td>{{prize.endTime | date:'medium'}}</td>
+                    <!--<td>{{prize.totalMoney}}</td>-->
+                    <td>{{prize.totalNo}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="prize-detail({id:prize.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="prize.edit({id:prize.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="prize.delete({id:prize.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

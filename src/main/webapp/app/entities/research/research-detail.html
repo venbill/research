@@ -1,0 +1,79 @@
+
+<div>
+    <h2><span data-translate="researchApp.research.detail.title">Research</span> {{vm.research.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <!--<dt><span data-translate="researchApp.research.researchId">Research Id</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.research.researchId}}</span>-->
+        <!--</dd>-->
+        <dt><span data-translate="researchApp.research.name">Name</span></dt>
+        <dd>
+            <span>{{vm.research.name}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.research.description">Description</span></dt>
+        <dd>
+            <span>{{vm.research.description}}</span>
+        </dd>
+        <!--<dt><span data-translate="researchApp.research.picture">Picture</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.research.picture}}</span>-->
+        <!--</dd>-->
+        <dt><span data-translate="researchApp.research.receive">Receive</span></dt>
+        <!--<dd>-->
+            <!--<span>{{vm.research.receive}}</span>-->
+        <!--</dd>-->
+
+        <dd  >
+            <div ng-repeat="type in receiveTypes"  ng-show="vm.research.receive == type.code">
+                {{type.name}}
+            </div>
+
+        </dd>
+
+
+
+
+
+        <!--<dt><span data-translate="researchApp.research.publisher">Publisher</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.research.publisher}}</span>-->
+        <!--</dd>-->
+        <dt><span data-translate="researchApp.research.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.research.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.research.updateTime">Update Time</span></dt>
+        <dd>
+            <span>{{vm.research.updateTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.research.startTime">Start Time</span></dt>
+        <dd>
+            <span>{{vm.research.startTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.research.endTime">End Time</span></dt>
+        <dd>
+            <span>{{vm.research.endTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.research.prizeId">Prize Id</span></dt>
+        <dd>
+
+
+             <span ng-repeat="p in prizes" ng-show="p.id==vm.research.prizeId">
+                {{p.name}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="research-detail.edit({id:vm.research.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

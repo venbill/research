@@ -215,9 +215,11 @@ public class UserService {
         return userRepository.findOneWithAuthoritiesById(id);
     }
 
+
     @Transactional(readOnly = true)
     public Optional<User> getUserWithAuthorities() {
-        return SecurityUtils.getCurrentUserLogin().flatMap(userRepository::findOneWithAuthoritiesByLogin);
+        return userRepository.findOneWithAuthoritiesById(SecurityUtils.getCurrentUserId());
+//        return SecurityUtils.getCurrentUserId().flatMap(userRepository::findOneWithAuthoritiesById);
     }
 
     /**

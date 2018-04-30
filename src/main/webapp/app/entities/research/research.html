@@ -1,0 +1,121 @@
+<div>
+    <h2 data-translate="researchApp.research.home.title">Research</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="research.new">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span data-translate="researchApp.research.home.createLabel">
+                        Create new Research
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                <!--<th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                <th jh-sort-by="researchId"><span data-translate="researchApp.research.researchId">Research Id</span>
+                    <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="name"><span data-translate="researchApp.research.name">Name</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <!--<th jh-sort-by="description"><span data-translate="researchApp.research.description">Description</span>-->
+                    <!--<span class="glyphicon glyphicon-sort"></span></th>-->
+                <!--<th jh-sort-by="picture"><span data-translate="researchApp.research.picture">Picture</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                <th jh-sort-by="receive"><span data-translate="researchApp.research.receive">Receive</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <!--<th jh-sort-by="startTime"><span data-translate="researchApp.research.startTime">Start Time</span> <span-->
+                    <!--class="glyphicon glyphicon-sort"></span></th>-->
+                <!--<th jh-sort-by="endTime"><span data-translate="researchApp.research.endTime">End Time</span> <span-->
+                    <!--class="glyphicon glyphicon-sort"></span></th>-->
+                <th jh-sort-by="prizeId"><span data-translate="researchApp.research.prizeId">Prize Id</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <!--<th jh-sort-by="publisher"><span data-translate="researchApp.research.publisher">Publisher</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                <th jh-sort-by="createTime"><span data-translate="researchApp.research.createTime">Create Time</span>
+                    <span class="glyphicon glyphicon-sort"></span></th>
+                <!--<th jh-sort-by="updateTime"><span data-translate="researchApp.research.updateTime">Update Time</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="research in vm.research track by research.id">
+                <td><a ui-sref="research-detail({id:research.id})">{{research.id}}</a></td>
+                <!--<td>{{research.researchId}}</td>-->
+                <td>{{research.name}}</td>
+                <!--<td>{{research.description}}</td>-->
+                <!--<td>{{research.picture}}</td>-->
+                <!--<td>{{research.receive}}</td>-->
+
+
+                <td>
+                    <div ng-repeat="type in receiveTypes" ng-show="research.receive == type.code">
+                        {{type.name}}
+                    </div>
+
+                </td>
+                <!--<td>{{research.startTime | date:'medium'}}</td>-->
+                <!--<td>{{research.endTime | date:'medium'}}</td>-->
+                <td>
+                        <span ng-repeat="p in prizes" ng-show="p.id==research.prizeId">
+                            {{p.name}}
+                        </span>
+                </td>
+
+
+                <!--<td>{{research.publisher}}</td>-->
+                <td>{{research.createTime | date:'medium'}}</td>
+                <!--<td>{{research.updateTime | date:'medium'}}</td>-->
+                <td>
+                    <button type="submit"
+                            ui-sref="question-detail({id:research.id})"
+                            class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        <span class="hidden-sm-down">编辑问卷</span>
+                    </button>
+                </td>
+                <!--<td>-->
+                <!--<button type="submit"-->
+                <!--ui-sref="question.edit({id:research.id})"-->
+                <!--class="btn btn-primary btn-sm">-->
+                <!--<span class="glyphicon glyphicon-pencil"></span>-->
+                <!--<span class="hidden-sm-down" >编辑题目</span>-->
+                <!--</button>-->
+                <!--</td>-->
+
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="research-detail({id:research.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="research.edit({id:research.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-sm-down">修改信息</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="research.delete({id:research.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage"
+                        ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

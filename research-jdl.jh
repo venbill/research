@@ -1,0 +1,118 @@
+entity OrderRecord {
+	orderId Long,
+    prizeId Long,
+    detailPrice Double,
+    researchId Long,
+    createTime Instant,
+    userId Long,
+    addressId Long
+}
+
+entity OrderInfo {
+	orderId Long,
+    status Integer,
+    expressType Integer,
+    expressNo String,
+    createTime Instant,
+    createUser Long
+}
+
+entity Prize {
+	prizeId Long,
+    prizeType Integer,
+    name String,
+    description String,
+    picture String,
+    minPrice Double,
+    maxPrice Double,
+  	goodPrice Double,
+    createTime Instant,
+    createUser Long,
+    updateTime Instant,
+    updateUser Long,
+    startTime Instant,
+    endTime Instant,
+    totalMoney Double,
+    totalNo Long
+
+}
+
+
+entity Answer {
+	answerId Long,
+	commitId Long,
+	questionId Long,
+    optionId Long,
+    createTime Instant
+}
+
+entity Commit {
+	commitId Long required,
+    userId Long,
+    researchId Long,
+    createTime Instant,
+    orderId Long
+}
+
+
+
+
+
+entity SelectOption {
+	optionId Long,
+	questionId Long,
+    content String,
+    isAnswer Integer,
+    orderNo Integer
+}
+
+/**
+ * The Employee entity.
+ */
+entity Question {
+	/**
+	* The firstname attribute.
+	*/
+	questionId Long,
+	researchId Long,
+	mainContent String,
+	orderNo Integer,
+	createTime Instant
+}
+
+entity Research {
+	researchId Long,
+	name String,
+	description String,
+    picture String,
+    receive Integer,
+    publisher Long,
+    createTime Instant,
+    updateTime Instant,
+    startTime Instant,
+    endTime Instant,
+    prizeId Long
+}
+
+entity Address {
+	addressId Long,
+	tel String,
+	address String,
+    createTime Instant,
+    updateTime Instant,
+    userId Long
+}
+
+
+
+
+
+// Set pagination options
+paginate Question with infinite-scroll
+paginate * with pagination
+
+
+
+// Set service options to all except few
+service all with serviceImpl
+

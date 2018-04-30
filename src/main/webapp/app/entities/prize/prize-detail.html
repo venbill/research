@@ -1,0 +1,83 @@
+
+<div>
+    <h2><span data-translate="researchApp.prize.detail.title">Prize</span> {{vm.prize.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <!--<dt><span data-translate="researchApp.prize.prizeId">Prize Id</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.prize.prizeId}}</span>-->
+        <!--</dd>-->
+        <!--<dt><span data-translate="researchApp.prize.prizeType">Prize Type</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.prize.prizeType}}</span>-->
+        <!--</dd>-->
+        <dt><span data-translate="researchApp.prize.name">Name</span></dt>
+        <dd>
+            <span>{{vm.prize.name}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.prize.description">Description</span></dt>
+        <dd>
+            <span>{{vm.prize.description}}</span>
+        </dd>
+        <!--<dt><span data-translate="researchApp.prize.picture">Picture</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.prize.picture}}</span>-->
+        <!--</dd>-->
+        <!--<dt><span data-translate="researchApp.prize.minPrice">Min Price</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.prize.minPrice}}</span>-->
+        <!--</dd>-->
+        <!--<dt><span data-translate="researchApp.prize.maxPrice">Max Price</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.prize.maxPrice}}</span>-->
+        <!--</dd>-->
+        <dt><span data-translate="researchApp.prize.goodPrice">Good Price</span></dt>
+        <dd>
+            <span>{{vm.prize.goodPrice}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.prize.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.prize.createTime | date:'medium'}}</span>
+        </dd>
+        <!--<dt><span data-translate="researchApp.prize.createUser">Create User</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.prize.createUser}}</span>-->
+        <!--</dd>-->
+        <!--<dt><span data-translate="researchApp.prize.updateTime">Update Time</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.prize.updateTime | date:'medium'}}</span>-->
+        <!--</dd>-->
+        <!--<dt><span data-translate="researchApp.prize.updateUser">Update User</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.prize.updateUser}}</span>-->
+        <!--</dd>-->
+        <dt><span data-translate="researchApp.prize.startTime">Start Time</span></dt>
+        <dd>
+            <span>{{vm.prize.startTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.prize.endTime">End Time</span></dt>
+        <dd>
+            <span>{{vm.prize.endTime | date:'medium'}}</span>
+        </dd>
+        <!--<dt><span data-translate="researchApp.prize.totalMoney">Total Money</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.prize.totalMoney}}</span>-->
+        <!--</dd>-->
+        <dt><span data-translate="researchApp.prize.totalNo">Total No</span></dt>
+        <dd>
+            <span>{{vm.prize.totalNo}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="prize-detail.edit({id:vm.prize.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

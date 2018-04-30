@@ -1,0 +1,29 @@
+
+{
+    "researchApp": {
+        "weUser" : {
+            "home": {
+                "title": "微信用户",
+                "createLabel": "创建新 微信用户",
+                "createOrEditLabel": "创建或编辑 微信用户"
+            },
+            "created": "微信用户 {{ param }} 创建成功",
+            "updated": "微信用户 {{ param }} 更新成功",
+            "deleted": "微信用户 {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 微信用户 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "微信用户"
+            },
+            "openId": "微信标识",
+            "nick": "昵称",
+            "name": "姓名",
+            "sex": "性别",
+            "tel": "电话",
+            "photo": "头像",
+            "createTime": "创建时间",
+            "status": "状态"
+        }
+    }
+}

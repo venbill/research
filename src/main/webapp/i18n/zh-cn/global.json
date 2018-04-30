@@ -7,6 +7,16 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "数据",
+                "orderRecord": "奖励记录",
+                "orderInfo": "奖励信息",
+                "prize": "奖品",
+                "answer": "答案",
+                "commit": "答卷",
+                "selectOption": "选项",
+                "question": "题目",
+                "research": "调查",
+                "address": "地址",
+                "we-user": "微信用户",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -121,5 +131,5 @@
         "emailexists": "该邮箱已被使用!",
         "idexists": "新建的 {{entityName}} 不能包含ID"
     },
-    "footer": "这里是页脚"
+    "footer": "Research-2018"
 }

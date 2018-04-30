@@ -1,0 +1,24 @@
+entity WeUser {
+	openId Long,
+	nick String,
+	name String,
+	sex Integer,
+	tel String,
+	photo String,
+	createTime Instant,
+	status Integer
+}
+
+
+
+
+
+// Set pagination options
+
+paginate * with pagination
+
+
+
+// Set service options to all except few
+service all with serviceImpl
+

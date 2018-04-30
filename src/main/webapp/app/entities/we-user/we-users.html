@@ -1,0 +1,74 @@
+<div>
+    <h2 data-translate="researchApp.weUser.home.title">We Users</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="we-user.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="researchApp.weUser.home.createLabel">
+                        Create new We User
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="openId"><span data-translate="researchApp.weUser.openId">Open Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nick"><span data-translate="researchApp.weUser.nick">Nick</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="researchApp.weUser.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="sex"><span data-translate="researchApp.weUser.sex">Sex</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="tel"><span data-translate="researchApp.weUser.tel">Tel</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="photo"><span data-translate="researchApp.weUser.photo">Photo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createTime"><span data-translate="researchApp.weUser.createTime">Create Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="status"><span data-translate="researchApp.weUser.status">Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="weUser in vm.weUsers track by weUser.id">
+                    <td><a ui-sref="we-user-detail({id:weUser.id})">{{weUser.id}}</a></td>
+                    <td>{{weUser.openId}}</td>
+                    <td>{{weUser.nick}}</td>
+                    <td>{{weUser.name}}</td>
+                    <td>{{weUser.sex}}</td>
+                    <td>{{weUser.tel}}</td>
+                    <td>{{weUser.photo}}</td>
+                    <td>{{weUser.createTime | date:'medium'}}</td>
+                    <td>{{weUser.status}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="we-user-detail({id:weUser.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="we-user.edit({id:weUser.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="we-user.delete({id:weUser.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

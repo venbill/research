@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "optionId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "questionId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "content",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isAnswer",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "orderNo",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180416125548",
+    "entityTableName": "select_option",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

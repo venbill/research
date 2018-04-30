@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "answerId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "commitId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "questionId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "optionId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20180416125546",
+    "entityTableName": "answer",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

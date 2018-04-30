@@ -1,0 +1,104 @@
+
+<div style="margin-left: 12%;margin-right: 12%">
+    <h2 style="text-align: center">{{baseInfo.name}}</h2>
+    <p >{{baseInfo.description}}</p>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details" ng-repeat="(i,q) in questions track by $index" ng-mouseenter="$parent['questions'+$index] = true" ng-mouseleave="$parent['questions'+$index] = false">
+        <!--展示-->
+        <div ng-show="!q.edit">
+            <h4>{{i+1}}.{{q.mainContent}}</h4>
+            <p ng-repeat="o in q.optionList">
+                <label style="font-weight: normal">
+                    <input type="radio"  name="radio" value={{o.id}}/> {{o.content}}
+                </label>
+
+            </p>
+
+        </div>
+        <!--编辑-->
+
+        <div ng-show="q.edit">
+            <h4>{{i+1}}.<input style="display: inline-block;width: 80%;" placeholder="请输入题干内容" type="text" class="form-control" ng-model="currentQuestion.mainContent"/></h4>
+            <div class="form-group">
+                <p ng-repeat="(j,o) in currentQuestion.optionList">
+                    <span>
+                    <button style="border: 0" ng-click="deleteOption(j)"><span class="glyphicon glyphicon-minus-sign"></span></button>
+                    <input type="radio"  name="radio" value={{o.id}}/>
+                    <input placeholder="请输入选项内容" type="text" style="display: inline-block;width: 80%;" class="form-control" ng-model="o.content"/>
+                    </span>
+                </p>
+
+                <button style="border: 0" ng-click="addOption()"><span class="glyphicon glyphicon-plus-sign"></span></button>
+
+            </div>
+            <div>
+
+                <button type="submit" ng-click="cancel()"
+                        class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span class="hidden-sm-down" >取消</span>
+                </button>
+                <button ng-disabled="!isEdit()||cantSubmit()" type="submit" ng-click="submit(i)"
+                        class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-ok"></span>
+                    <span class="hidden-sm-down" >提交</span>
+                </button>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div ng-show="$parent['questions'+$index]&&!q.edit">
+            <button type="submit" ng-click="edit(i)"
+                    class="btn btn-primary btn-sm">
+                <span class="glyphicon glyphicon-pencil"></span>
+                <span class="hidden-sm-down" >编辑</span>
+            </button>
+
+            <button type="submit"
+                    ng-click="delete(i)"
+                    class="btn btn-danger btn-sm">
+                <span class="glyphicon glyphicon-trash"></span>
+                <span class="hidden-sm-down">删除</span>
+            </button>
+
+
+        </div>
+
+
+        <hr>
+    </dl>
+
+
+        <button ng-show="!isEdit()" type="submit"
+                ng-click="insertBtn()"
+                class="btn btn-danger btn-sm">
+            <span class="glyphicon glyphicon-plus"></span>
+            <span class="hidden-sm-down">添加题目</span>
+        </button>
+
+
+
+
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <!--<button type="button" ui-sref="question-detail.edit({id:vm.question.id})" class="btn btn-primary">-->
+        <!--<span class="glyphicon glyphicon-pencil"></span>-->
+        <!--<span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>-->
+    <!--</button>-->
+</div>

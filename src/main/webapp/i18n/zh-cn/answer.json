@@ -1,0 +1,26 @@
+
+{
+    "researchApp": {
+        "answer" : {
+            "home": {
+                "title": "答案",
+                "createLabel": "创建新 答案",
+                "createOrEditLabel": "创建或编辑 答案"
+            },
+            "created": "答案 {{ param }} 创建成功",
+            "updated": "答案 {{ param }} 更新成功",
+            "deleted": "答案 {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 答案 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "答案"
+            },
+            "answerId": "答案 Id",
+            "commitId": "提交 Id",
+            "questionId": "问题 Id",
+            "optionId": "选项 Id",
+            "createTime": "创建时间"
+        }
+    }
+}

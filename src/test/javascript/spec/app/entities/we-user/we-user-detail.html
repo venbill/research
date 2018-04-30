@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="researchApp.weUser.detail.title">We User</span> {{vm.weUser.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="researchApp.weUser.openId">Open Id</span></dt>
+        <dd>
+            <span>{{vm.weUser.openId}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.weUser.nick">Nick</span></dt>
+        <dd>
+            <span>{{vm.weUser.nick}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.weUser.name">Name</span></dt>
+        <dd>
+            <span>{{vm.weUser.name}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.weUser.sex">Sex</span></dt>
+        <dd>
+            <span>{{vm.weUser.sex}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.weUser.tel">Tel</span></dt>
+        <dd>
+            <span>{{vm.weUser.tel}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.weUser.photo">Photo</span></dt>
+        <dd>
+            <span>{{vm.weUser.photo}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.weUser.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.weUser.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.weUser.status">Status</span></dt>
+        <dd>
+            <span>{{vm.weUser.status}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="we-user-detail.edit({id:vm.weUser.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

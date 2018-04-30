@@ -33,6 +33,11 @@ public final class SecurityUtils {
             });
     }
 
+    public static Long getCurrentUserId(){
+        return Long.valueOf(getCurrentUserLogin().get());
+    }
+
+
     /**
      * Get the JWT of the current user.
      *

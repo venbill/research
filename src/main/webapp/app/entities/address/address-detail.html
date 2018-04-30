@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="researchApp.address.detail.title">Address</span> {{vm.address.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="researchApp.address.addressId">Address Id</span></dt>
+        <dd>
+            <span>{{vm.address.addressId}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.address.tel">Tel</span></dt>
+        <dd>
+            <span>{{vm.address.tel}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.address.address">Address</span></dt>
+        <dd>
+            <span>{{vm.address.address}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.address.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.address.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.address.updateTime">Update Time</span></dt>
+        <dd>
+            <span>{{vm.address.updateTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="researchApp.address.userId">User Id</span></dt>
+        <dd>
+            <span>{{vm.address.userId}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="address-detail.edit({id:vm.address.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

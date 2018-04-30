@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "orderId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "prizeId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "detailPrice",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "researchId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "addressId",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180416125543",
+    "entityTableName": "order_record",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

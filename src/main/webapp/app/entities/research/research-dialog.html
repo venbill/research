@@ -1,0 +1,127 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myResearchLabel" data-translate="researchApp.research.home.createOrEditLabel">Create or edit a Research</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.research.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.research.id" readonly />
+        </div>
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="researchApp.research.researchId" for="field_researchId">Research Id</label>-->
+            <!--<input type="number" class="form-control" name="researchId" id="field_researchId"-->
+                    <!--ng-model="vm.research.researchId"-->
+                    <!--/>-->
+        <!--</div>-->
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.research.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.research.name"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.research.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.research.description"
+                    />
+        </div>
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="researchApp.research.picture" for="field_picture">Picture</label>-->
+            <!--<input type="text" class="form-control" name="picture" id="field_picture"-->
+                    <!--ng-model="vm.research.picture"-->
+                    <!--/>-->
+        <!--</div>-->
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.research.receive" for="field_receive">Receive</label>
+            <!--<input type="number" class="form-control" name="receive" id="field_receive"-->
+                    <!--ng-model="vm.research.receive"-->
+                    <!--/>-->
+
+            <div class="form-control" id="field_receive"align="center">
+                <label class="row col-md-2"  ng-repeat="type in receiveTypes" >
+                    <input type="radio" ng-value={{type.code}} ng-model="vm.research.receive">{{type.name}}
+                </label>
+
+            </div>
+
+
+
+
+
+
+        </div>
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="researchApp.research.publisher" for="field_publisher">Publisher</label>-->
+            <!--<input type="number" class="form-control" name="publisher" id="field_publisher"-->
+                    <!--ng-model="vm.research.publisher"-->
+                    <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="researchApp.research.createTime" for="field_createTime">Create Time</label>-->
+                <!--<div class="input-group">-->
+                    <!--<input id="field_createTime" type="text" class="form-control" name="createTime" datetime-picker="{{dateformat}}" ng-model="vm.research.createTime" is-open="vm.datePickerOpenStatus.createTime"-->
+                    <!--/>-->
+                    <!--<span class="input-group-btn">-->
+                        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('createTime')"><i class="glyphicon glyphicon-calendar"></i></button>-->
+                    <!--</span>-->
+                <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="researchApp.research.updateTime" for="field_updateTime">Update Time</label>-->
+                <!--<div class="input-group">-->
+                    <!--<input id="field_updateTime" type="text" class="form-control" name="updateTime" datetime-picker="{{dateformat}}" ng-model="vm.research.updateTime" is-open="vm.datePickerOpenStatus.updateTime"-->
+                    <!--/>-->
+                    <!--<span class="input-group-btn">-->
+                        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('updateTime')"><i class="glyphicon glyphicon-calendar"></i></button>-->
+                    <!--</span>-->
+                <!--</div>-->
+        <!--</div>-->
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.research.startTime" for="field_startTime">Start Time</label>
+                <div class="input-group">
+                    <input id="field_startTime" type="text" class="form-control" name="startTime" datetime-picker="{{dateformat}}" ng-model="vm.research.startTime" is-open="vm.datePickerOpenStatus.startTime"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.research.endTime" for="field_endTime">End Time</label>
+                <div class="input-group">
+                    <input id="field_endTime" type="text" class="form-control" name="endTime" datetime-picker="{{dateformat}}" ng-model="vm.research.endTime" is-open="vm.datePickerOpenStatus.endTime"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.research.prizeId" for="field_prizeId">Prize Id</label>
+            <!--<input type="number" class="form-control" name="prizeId" id="field_prizeId"-->
+                    <!--ng-model="vm.research.prizeId"-->
+                    <!--/>-->
+
+            <select  class="form-control" id="field_prizeId" ng-model="vm.research.prizeId" ng-options=" t.id as t.name for t in prizes">
+                <option > {{t.name}}</option>
+            </select>
+
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

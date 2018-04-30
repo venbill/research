@@ -1,0 +1,60 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAnswerLabel" data-translate="researchApp.answer.home.createOrEditLabel">Create or edit a Answer</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.answer.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.answer.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.answer.answerId" for="field_answerId">Answer Id</label>
+            <input type="number" class="form-control" name="answerId" id="field_answerId"
+                    ng-model="vm.answer.answerId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.answer.commitId" for="field_commitId">Commit Id</label>
+            <input type="number" class="form-control" name="commitId" id="field_commitId"
+                    ng-model="vm.answer.commitId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.answer.questionId" for="field_questionId">Question Id</label>
+            <input type="number" class="form-control" name="questionId" id="field_questionId"
+                    ng-model="vm.answer.questionId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.answer.optionId" for="field_optionId">Option Id</label>
+            <input type="number" class="form-control" name="optionId" id="field_optionId"
+                    ng-model="vm.answer.optionId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.answer.createTime" for="field_createTime">Create Time</label>
+                <div class="input-group">
+                    <input id="field_createTime" type="text" class="form-control" name="createTime" datetime-picker="{{dateformat}}" ng-model="vm.answer.createTime" is-open="vm.datePickerOpenStatus.createTime"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

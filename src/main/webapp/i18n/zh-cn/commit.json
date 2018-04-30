@@ -1,0 +1,26 @@
+
+{
+    "researchApp": {
+        "commit" : {
+            "home": {
+                "title": "答卷",
+                "createLabel": "创建新 答卷",
+                "createOrEditLabel": "创建或编辑 答卷"
+            },
+            "created": "答卷 {{ param }} 创建成功",
+            "updated": "答卷 {{ param }} 更新成功",
+            "deleted": "答卷 {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 答卷 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "答卷"
+            },
+            "commitId": "答卷 Id",
+            "userId": "用户 Id",
+            "researchId": "调查 Id",
+            "createTime": "创建时间",
+            "orderId": "奖励"
+        }
+    }
+}

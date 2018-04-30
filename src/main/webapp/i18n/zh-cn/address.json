@@ -1,0 +1,27 @@
+
+{
+    "researchApp": {
+        "address" : {
+            "home": {
+                "title": "地址",
+                "createLabel": "创建新 地址",
+                "createOrEditLabel": "创建或编辑 地址"
+            },
+            "created": "地址 {{ param }} 创建成功",
+            "updated": "地址 {{ param }} 更新成功",
+            "deleted": "地址 {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 地址 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "地址"
+            },
+            "addressId": "地址编号",
+            "tel": "电话",
+            "address": "地点",
+            "createTime": "创建时间",
+            "updateTime": "修改时间",
+            "userId": "用户"
+        }
+    }
+}

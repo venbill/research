@@ -1,0 +1,72 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myOrderRecordLabel" data-translate="researchApp.orderRecord.home.createOrEditLabel">Create or edit a Order Record</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.orderRecord.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.orderRecord.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.orderRecord.orderId" for="field_orderId">Order Id</label>
+            <input type="number" class="form-control" name="orderId" id="field_orderId"
+                    ng-model="vm.orderRecord.orderId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.orderRecord.prizeId" for="field_prizeId">Prize Id</label>
+            <input type="number" class="form-control" name="prizeId" id="field_prizeId"
+                    ng-model="vm.orderRecord.prizeId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.orderRecord.detailPrice" for="field_detailPrice">Detail Price</label>
+            <input type="number" class="form-control" name="detailPrice" id="field_detailPrice"
+                    ng-model="vm.orderRecord.detailPrice"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.orderRecord.researchId" for="field_researchId">Research Id</label>
+            <input type="number" class="form-control" name="researchId" id="field_researchId"
+                    ng-model="vm.orderRecord.researchId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.orderRecord.createTime" for="field_createTime">Create Time</label>
+                <div class="input-group">
+                    <input id="field_createTime" type="text" class="form-control" name="createTime" datetime-picker="{{dateformat}}" ng-model="vm.orderRecord.createTime" is-open="vm.datePickerOpenStatus.createTime"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.orderRecord.userId" for="field_userId">User Id</label>
+            <input type="number" class="form-control" name="userId" id="field_userId"
+                    ng-model="vm.orderRecord.userId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.orderRecord.addressId" for="field_addressId">Address Id</label>
+            <input type="number" class="form-control" name="addressId" id="field_addressId"
+                    ng-model="vm.orderRecord.addressId"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

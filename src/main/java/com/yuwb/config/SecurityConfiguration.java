@@ -100,6 +100,32 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/api/account/reset-password/init").permitAll()
             .antMatchers("/api/account/reset-password/finish").permitAll()
             .antMatchers("/api/profile-info").permitAll()
+
+
+
+            .antMatchers("/api/researchs").permitAll()
+            .antMatchers("/api/research/*").permitAll()
+            .antMatchers("/api/research/*/*").permitAll()
+            .antMatchers("/api/questions/research/*").permitAll()
+            .antMatchers("/api/commit/answer").permitAll()
+            .antMatchers("/api/research/questions").permitAll()
+            .antMatchers("/api/researchs/my").permitAll()
+            .antMatchers("/api/wechat/login/*").permitAll()
+            .antMatchers("/api/we-users").permitAll()
+            .antMatchers("/api/address/add").permitAll()
+            .antMatchers("/api/research/prize/*").permitAll()
+            .antMatchers("/api/order-records/my/*").permitAll()
+
+
+
+
+
+
+
+
+
+
+
             .antMatchers("/api/**").authenticated()
             .antMatchers("/management/health").permitAll()
             .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)

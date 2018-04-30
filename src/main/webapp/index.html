@@ -28,7 +28,10 @@
     <page-ribbon></page-ribbon>
     <div ui-view="navbar" ng-cloak></div>
     <div class="container">
-        <div class="well" ui-view="content">
+        <!--<div class="well-sm" ui-view="content">-->
+            <!--&lt;!&ndash; Angular views &ndash;&gt;-->
+        <!--</div>-->
+        <div style="padding-left: 5%;padding-right: 5%" class="panel panel-default" ui-view="content">
             <!-- Angular views -->
         </div>
 
@@ -106,7 +109,67 @@
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
+    <script src="app/entities/we-user/we-user-dialog.controller.js"></script>
+    <script src="app/entities/we-user/we-user-detail.controller.js"></script>
+    <script src="app/entities/we-user/we-user-delete-dialog.controller.js"></script>
+    <script src="app/entities/we-user/we-user.state.js"></script>
+    <script src="app/entities/we-user/we-user.service.js"></script>
+    <script src="app/entities/we-user/we-user.controller.js"></script>
+    <script src="app/entities/select-option/select-option-dialog.controller.js"></script>
+    <script src="app/entities/select-option/select-option-detail.controller.js"></script>
+    <script src="app/entities/select-option/select-option-delete-dialog.controller.js"></script>
+    <script src="app/entities/select-option/select-option.state.js"></script>
+    <script src="app/entities/select-option/select-option.service.js"></script>
+    <script src="app/entities/select-option/select-option.controller.js"></script>
+    <script src="app/entities/research/research-dialog.controller.js"></script>
+    <script src="app/entities/research/research-detail.controller.js"></script>
+    <script src="app/entities/research/research-delete-dialog.controller.js"></script>
+    <script src="app/entities/research/research.state.js"></script>
+    <script src="app/entities/research/research.service.js"></script>
+    <script src="app/entities/research/research.controller.js"></script>
+    <script src="app/entities/question/question-dialog.controller.js"></script>
+    <script src="app/entities/question/question-detail.controller.js"></script>
+    <script src="app/entities/question/question-delete-dialog.controller.js"></script>
+    <script src="app/entities/question/question.state.js"></script>
+    <script src="app/entities/question/question.service.js"></script>
+    <script src="app/entities/question/question.controller.js"></script>
+    <script src="app/entities/prize/prize-dialog.controller.js"></script>
+    <script src="app/entities/prize/prize-detail.controller.js"></script>
+    <script src="app/entities/prize/prize-delete-dialog.controller.js"></script>
+    <script src="app/entities/prize/prize.state.js"></script>
+    <script src="app/entities/prize/prize.service.js"></script>
+    <script src="app/entities/prize/prize.controller.js"></script>
+    <script src="app/entities/order-record/order-record-dialog.controller.js"></script>
+    <script src="app/entities/order-record/order-record-detail.controller.js"></script>
+    <script src="app/entities/order-record/order-record-delete-dialog.controller.js"></script>
+    <script src="app/entities/order-record/order-record.state.js"></script>
+    <script src="app/entities/order-record/order-record.service.js"></script>
+    <script src="app/entities/order-record/order-record.controller.js"></script>
+    <script src="app/entities/order-info/order-info-dialog.controller.js"></script>
+    <script src="app/entities/order-info/order-info-detail.controller.js"></script>
+    <script src="app/entities/order-info/order-info-delete-dialog.controller.js"></script>
+    <script src="app/entities/order-info/order-info.state.js"></script>
+    <script src="app/entities/order-info/order-info.service.js"></script>
+    <script src="app/entities/order-info/order-info.controller.js"></script>
     <script src="app/entities/entity.state.js"></script>
+    <script src="app/entities/commit/commit-dialog.controller.js"></script>
+    <script src="app/entities/commit/commit-detail.controller.js"></script>
+    <script src="app/entities/commit/commit-delete-dialog.controller.js"></script>
+    <script src="app/entities/commit/commit.state.js"></script>
+    <script src="app/entities/commit/commit.service.js"></script>
+    <script src="app/entities/commit/commit.controller.js"></script>
+    <script src="app/entities/answer/answer-dialog.controller.js"></script>
+    <script src="app/entities/answer/answer-detail.controller.js"></script>
+    <script src="app/entities/answer/answer-delete-dialog.controller.js"></script>
+    <script src="app/entities/answer/answer.state.js"></script>
+    <script src="app/entities/answer/answer.service.js"></script>
+    <script src="app/entities/answer/answer.controller.js"></script>
+    <script src="app/entities/address/address-dialog.controller.js"></script>
+    <script src="app/entities/address/address-detail.controller.js"></script>
+    <script src="app/entities/address/address-delete-dialog.controller.js"></script>
+    <script src="app/entities/address/address.state.js"></script>
+    <script src="app/entities/address/address.service.js"></script>
+    <script src="app/entities/address/address.controller.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
     <script src="app/components/util/sort-by.directive.js"></script>

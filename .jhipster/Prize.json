@@ -1,0 +1,76 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "prizeId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "prizeType",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "picture",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "minPrice",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "maxPrice",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "goodPrice",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "createUser",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "updateTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "updateUser",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "totalMoney",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "totalNo",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180416125545",
+    "entityTableName": "prize",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

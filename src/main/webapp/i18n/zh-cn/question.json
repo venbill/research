@@ -1,0 +1,29 @@
+
+{
+    "researchApp": {
+        "question" : {
+            "home": {
+                "title": "题目",
+                "createLabel": "创建新 题目",
+                "createOrEditLabel": "创建或编辑 题目"
+            },
+            "created": "题目 {{ param }} 创建成功",
+            "updated": "题目 {{ param }} 更新成功",
+            "deleted": "题目 {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 题目 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "题目"
+            },
+            "questionId": "题目 Id",
+            "researchId": "调查 Id",
+            "mainContent": "题干",
+            "orderNo": "排序",
+            "createTime": "创建时间",
+            "help": {
+                "questionId": "The firstname attribute."
+            }
+        }
+    }
+}

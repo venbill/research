@@ -1,0 +1,28 @@
+
+{
+    "researchApp": {
+        "orderRecord" : {
+            "home": {
+                "title": "领奖记录",
+                "createLabel": "创建新 领奖记录",
+                "createOrEditLabel": "创建或编辑 领奖记录"
+            },
+            "created": "领奖记录 {{ param }} 创建成功",
+            "updated": "领奖记录 {{ param }} 更新成功",
+            "deleted": "领奖记录 {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 领奖记录 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "领奖记录"
+            },
+            "orderId": "订单 Id",
+            "prizeId": "奖品 Id",
+            "detailPrice": "奖品详情",
+            "researchId": "调查 Id",
+            "createTime": "创建时间",
+            "userId": "用户",
+            "addressId": "地址 Id"
+        }
+    }
+}

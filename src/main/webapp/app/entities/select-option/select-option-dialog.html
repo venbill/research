@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="mySelectOptionLabel" data-translate="researchApp.selectOption.home.createOrEditLabel">Create or edit a Select Option</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.selectOption.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.selectOption.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.selectOption.optionId" for="field_optionId">Option Id</label>
+            <input type="number" class="form-control" name="optionId" id="field_optionId"
+                    ng-model="vm.selectOption.optionId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.selectOption.questionId" for="field_questionId">Question Id</label>
+            <input type="number" class="form-control" name="questionId" id="field_questionId"
+                    ng-model="vm.selectOption.questionId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.selectOption.content" for="field_content">Content</label>
+            <input type="text" class="form-control" name="content" id="field_content"
+                    ng-model="vm.selectOption.content"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.selectOption.isAnswer" for="field_isAnswer">Is Answer</label>
+            <input type="number" class="form-control" name="isAnswer" id="field_isAnswer"
+                    ng-model="vm.selectOption.isAnswer"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="researchApp.selectOption.orderNo" for="field_orderNo">Order No</label>
+            <input type="number" class="form-control" name="orderNo" id="field_orderNo"
+                    ng-model="vm.selectOption.orderNo"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
